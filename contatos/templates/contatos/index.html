@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{%block conteudo %}
+ <h1 class="mt-5">Minha agenda</h1>
+
+        <table class="table">
+            {% for contato in contatos%}
+          <thead>
+            <tr>
+              <th><a href="{% url 'ver_contato' contato.id %}">{{ contato.nome }}</a></th>
+              <th>{{ contato.sobrenome }}</th>
+              <th>{{ contato.telefone }}</th>
+              <th>{{ contato.contegoria }}</th>
+            </tr>
+          {%endfor%}
+          </thead>
+        </table>
+
+{%endblock%}
