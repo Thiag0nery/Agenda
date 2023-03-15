@@ -4,15 +4,27 @@
 
         <table class="table">
             {% for contato in contatos%}
-          <thead>
+            {% if contato.mostra%}
+                 <thead>
             <tr>
               <th><a href="{% url 'ver_contato' contato.id %}">{{ contato.nome }}</a></th>
               <th>{{ contato.sobrenome }}</th>
               <th>{{ contato.telefone }}</th>
               <th>{{ contato.contegoria }}</th>
             </tr>
-          {%endfor%}
+            {% endif%}
+            {%endfor%}
           </thead>
         </table>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+  </ul>
+</nav>
 
 {%endblock%}

@@ -15,5 +15,6 @@ class Contato(models.Model):
     data = models.DateTimeField(default=timezone.now)
     descriacao = models.CharField(max_length=255, blank=True)
     contegoria = models.ForeignKey(Contegoria, on_delete=models.DO_NOTHING)
+    mostra = models.BooleanField(default=True)
     def __str__(self):
         return self.nome
