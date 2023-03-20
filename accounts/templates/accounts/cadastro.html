@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    <form method="POST" action="{% url 'cadastro' %}">
+        {% csrf_token %}
+        {% include 'parcias/_messages.html'%}
+        <div class="form-group">
+    <label>Nome</label>
+    <input type="text" name="nome" class="form-control"  placeholder="Nome">
+  </div>
+        <div class="form-group">
+    <label>Sobrenome</label>
+    <input type="text" name="sobrenome" class="form-control"  placeholder="sobrenome">
+  </div>
+  <div class="form-group">
+    <label>Email address</label>
+    <input type="email" class="form-control"  placeholder="Enter email">
+  </div>
+         <div class="form-group">
+    <label>Usuario</label>
+    <input type="text" name="usuario" class="form-control"  placeholder="usuario">
+  </div>
+  <div class="form-group">
+    <label >Senha</label>
+    <input type="password" class="form-control" name="senha" placeholder="Password">
+  </div>
+          <div class="form-group">
+    <label >Repitir senha</label>
+    <input type="password" class="form-control" name="senharepete" placeholder="Password">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+{%endblock%}

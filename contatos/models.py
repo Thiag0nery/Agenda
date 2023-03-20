@@ -16,5 +16,6 @@ class Contato(models.Model):
     descriacao = models.CharField(max_length=255, blank=True)
     contegoria = models.ForeignKey(Contegoria, on_delete=models.DO_NOTHING)
     mostra = models.BooleanField(default=True)
+    foto = models.ImageField(blank=True, upload_to='fotos/%Y/%m')
     def __str__(self):
         return self.nome
